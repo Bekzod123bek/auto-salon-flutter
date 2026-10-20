@@ -9,6 +9,18 @@ Flutter.
 > stored). Photos show the listed models, but not the exact cars for sale;
 > colours and trim may differ.
 
+## Screenshots
+
+| Onboarding | Home | Car details | Loan calculator | Filters |
+|---|---|---|---|---|
+| <img src="docs/screenshots/onboarding.jpg" width="180"> | <img src="docs/screenshots/home.jpg" width="180"> | <img src="docs/screenshots/details.jpg" width="180"> | <img src="docs/screenshots/loan_calculator.jpg" width="180"> | <img src="docs/screenshots/filters.jpg" width="180"> |
+
+Screenshots were taken on an Android emulator (Pixel 7).
+
+## Design
+
+Premium dark theme by default (with a light mode switch), red accent colour, full-bleed car photos with gradients, rounded cards and Hero transitions between the list and the details page.
+
 ## Features
 
 - **Onboarding** (3 slides, shown on first launch only)
@@ -64,3 +76,7 @@ The app needs an internet connection to load photos.
 ## Credits
 
 Photos: [Unsplash](https://unsplash.com) (Unsplash License).
+
+## Author
+
+Bekzod Abdurahimov, Flutter developer · [GitHub](https://github.com/Bekzod123bek)
