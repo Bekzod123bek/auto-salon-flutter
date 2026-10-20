@@ -6,7 +6,8 @@ Flutter.
 > **Note:** this is a portfolio/demo project, not a production app. All cars,
 > prices and specs are sample data from an in-memory repository, there is no
 > backend and sign-in is simulated (no account is created, passwords are not
-> stored). Photos are illustrative and may not show the exact listed model.
+> stored). Photos show the listed models, but not the exact cars for sale;
+> colours and trim may differ.
 
 ## Features
 

@@ -29,16 +29,16 @@ void main() {
 
     setUp(() async => repo = MockCarRepository(await _storage(), delay: Duration.zero));
 
-    test('has 12 cars with several photos each', () async {
+    test('has 12 cars with photos', () async {
       final cars = await repo.getCars();
       expect(cars, hasLength(12));
-      expect(cars.every((c) => c.images.length >= 3), isTrue);
+      expect(cars.every((c) => c.images.isNotEmpty), isTrue);
     });
 
     test('filters by brand, fuel, price and year', () async {
-      final kia = await repo.getCars(filter: const CarFilter(brand: 'Kia'));
-      expect(kia, isNotEmpty);
-      expect(kia.every((c) => c.brand == 'Kia'), isTrue);
+      final bmw = await repo.getCars(filter: const CarFilter(brand: 'BMW'));
+      expect(bmw, isNotEmpty);
+      expect(bmw.every((c) => c.brand == 'BMW'), isTrue);
 
       final hybrids =
           await repo.getCars(filter: const CarFilter(fuels: {FuelType.hybrid}));
@@ -52,7 +52,7 @@ void main() {
 
     test('search matches brand and model', () async {
       final result = await repo.getCars(filter: const CarFilter(query: 'camry'));
-      expect(result.single.title, 'Toyota Camry 75');
+      expect(result.single.title, 'Toyota Camry');
     });
 
     test('sorts by price', () async {
@@ -67,15 +67,15 @@ void main() {
   group('CarFilter', () {
     test('activeCount ignores search, brand and sort', () {
       const filter = CarFilter(
-        query: 'kia',
-        brand: 'Kia',
+        query: 'bmw',
+        brand: 'BMW',
         sort: SortOrder.priceDesc,
         maxPrice: 20000,
         transmissions: {Transmission.manual},
       );
       expect(filter.activeCount, 2);
       expect(filter.clearAdvanced().activeCount, 0);
-      expect(filter.clearAdvanced().brand, 'Kia');
+      expect(filter.clearAdvanced().brand, 'BMW');
     });
   });
 
@@ -229,7 +229,7 @@ void main() {
       await tester.pumpWidget(const AutoSalonApp());
       await tester.pumpAndSettle();
 
-      final firstCar = find.text('BYD Han EV').last;
+      final firstCar = find.text('Mercedes-AMG GT').last;
       await tester.ensureVisible(firstCar);
       await tester.pumpAndSettle();
       await tester.tap(firstCar);
