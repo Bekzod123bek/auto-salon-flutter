@@ -173,6 +173,7 @@ class _CarDetailPageState extends State<CarDetailPage> {
                 GridView.count(
                   crossAxisCount: 3,
                   shrinkWrap: true,
+                  padding: EdgeInsets.zero,
                   physics: const NeverScrollableScrollPhysics(),
                   mainAxisSpacing: 10,
                   crossAxisSpacing: 10,

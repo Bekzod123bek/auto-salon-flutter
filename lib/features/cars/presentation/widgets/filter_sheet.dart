@@ -24,8 +24,8 @@ class _FilterSheet extends StatefulWidget {
 }
 
 class _FilterSheetState extends State<_FilterSheet> {
-  static const _priceMin = 5000.0;
-  static const _priceMax = 40000.0;
+  static const _priceMin = 20000.0;
+  static const _priceMax = 250000.0;
   static const _yearMin = 2015.0;
   static const _yearMax = 2025.0;
   static const _mileageMax = 100000.0;
@@ -148,7 +148,7 @@ class _FilterSheetState extends State<_FilterSheet> {
                     values: _price,
                     min: _priceMin,
                     max: _priceMax,
-                    divisions: 35,
+                    divisions: 46,
                     onChanged: (v) => setState(() => _price = v),
                   ),
                   trailing:

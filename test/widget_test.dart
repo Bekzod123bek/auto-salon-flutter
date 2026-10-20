@@ -45,9 +45,10 @@ void main() {
       expect(hybrids.every((c) => c.fuel == FuelType.hybrid), isTrue);
 
       final cheapNew = await repo.getCars(
-          filter: const CarFilter(maxPrice: 20000, minYear: 2022));
+          filter: const CarFilter(maxPrice: 45000, minYear: 2022));
+      expect(cheapNew, isNotEmpty);
       expect(cheapNew,
-          everyElement(predicate<Car>((c) => c.price <= 20000 && c.year >= 2022)));
+          everyElement(predicate<Car>((c) => c.price <= 45000 && c.year >= 2022)));
     });
 
     test('search matches brand and model', () async {
